@@ -1,0 +1,22 @@
+.hot-hashtags{
+        width: 100%;
+        height: max-content;
+        margin-top: 5%;
+    
+   
+        @include display-flex;
+        // justify-content: space-between;
+        img{
+            width: 30px;
+            height: 30px;
+            
+        }
+        span{
+            // font-size: 1.3em;
+            // font-weight: 600;
+            color: $black-color;
+            margin-right: 5%;
+            
+        }
+    
+}

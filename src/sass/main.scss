@@ -1,0 +1,20 @@
+@import "reset";
+@import './base';
+@import "../component/style";
+@import "../component/layout/rightsidebar/style";
+@import "../component/layout/mainbar/style";
+@import "../component/layout/leftsidebar/style";
+@import "../component/layout/rightsidebar/HotHashtags/style";
+
+
+
+body{
+    width: 100%;
+    height: 100vh;
+    direction: rtl;
+    font-family: Shabnam;
+    #root{
+        width: 100%;
+        height: 100%;
+    }
+}
