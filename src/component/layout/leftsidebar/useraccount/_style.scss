@@ -1,0 +1,22 @@
+.userAccount{
+   
+    width : 100%;
+    direction: ltr;
+    @include display-flex;
+    gap: 8%;
+    img{
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+}
+    span{
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+
+}

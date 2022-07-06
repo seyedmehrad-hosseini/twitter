@@ -1,4 +1,33 @@
 .left-sidebar{
-    width: 25%;
+    
+    width : 25%;
     height: 100%;
+    padding: 1.7%;
+    box-sizing: border-box;
+    border-right: 1.4px solid $light-blue;
+    @include display-flex;
+    align-items: flex-start !important;
+    flex-direction: column;
+    gap: 5%;
+
+
+}
+.bestUsers{
+    width: 100%;
+    height: max-content;
+    background-color: $light-gray;
+    padding: 7%;
+    box-sizing: border-box;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    
+    .title{
+        font-weight: 500;
+        font-size: 1.2em;
+        display: block;
+        margin-bottom: 5%;
+    }
 }
