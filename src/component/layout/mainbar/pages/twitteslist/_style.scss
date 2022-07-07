@@ -1,0 +1,95 @@
+
+.new-twitte{
+    width : 100%;
+    direction: rtl;
+    @include display-flex;
+    align-items: flex-start !important;
+    gap: 8%;
+    padding: 3%;
+    box-sizing: border-box;
+    background-color: white;
+    margin-top: 7px;
+    img{
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+}
+    .name-username-twitte{
+        display: flex;
+        gap :20px;
+        flex: 1;
+        height: 100%;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .name{
+            font-size: 1.1em;
+            font-weight: 500;
+            display: block;
+        }
+        .username{
+            flex: 1;
+            font-size: .7em;
+            font-weight: 300;
+            display: block;
+            color: $light-font-color;
+            direction: ltr;
+            display: flex;
+            justify-content: end;
+        }
+        .twitte{
+            width: 85%;
+        }
+
+    }
+}
+
+.reTwitte-likes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 2%;
+    .like-number{
+        font-size: .8em;
+        color: $gray;
+
+    }
+    .like-icon{
+        width: 30px;
+        height: 30px;
+        border:1px solid $gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color : red;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+    }
+    .reTwitte{
+        width: 30px;
+        height: 30px;
+        border:1px solid $gray;
+        display: flex;
+        font-size: 1.2em;
+        font-weight: 500;
+        color: $gray;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+    }
+}

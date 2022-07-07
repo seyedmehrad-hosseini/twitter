@@ -1,0 +1,12 @@
+.header{
+    @include display-flex;
+    padding: 3%;
+    box-sizing: border-box;
+    height: 10%;
+    background-color: white;
+    span{
+        margin-right: 5px;
+        font-weight: 600;
+        font-size: 1.1em;
+    }
+}
