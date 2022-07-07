@@ -2,12 +2,12 @@ import React from 'react';
 import { FaHome } from "react-icons/fa";
 
 
-const Header = () => {
+const Header = ({name , icon}) => {
     return (
         
             <div className='header'>
-                <FaHome />
-                <span>خانه</span>
+                {icon}
+                <span>{name}</span>
             </div>
        
     );

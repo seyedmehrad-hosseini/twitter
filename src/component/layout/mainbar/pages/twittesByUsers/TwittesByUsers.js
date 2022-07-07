@@ -1,12 +1,12 @@
 import React from 'react';
-import { FaSlackHash } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import bestUsersData from '../../../../data';
 import Header from '../../../../header/Header';
 import TwittesList from '../twitteslist/TwittesList';
-const MostHashtags = () => {
+const TwittesByUsers = () => {
     return (
-        <div className='mostHashtagPage'>
-            <Header name={"بیشترین هشتگ ها"} icon={<FaSlackHash/>} />
+        <div className='twittesByUsers'>
+            <Header name={"سیدمهراد حسینی"} icon={<FaUserAlt/>} />
 
             <div className='twittes'>
                 {
@@ -17,4 +17,4 @@ const MostHashtags = () => {
     );
 };
 
-export default MostHashtags;
+export default TwittesByUsers;
