@@ -3,24 +3,26 @@ import { FaHeart,FaRetweet} from "react-icons/fa";
 
 
 
-const TwittesList = ({name , username , img_addres}) => {
+
+const TwittesList = ({sender , text , likes}) => {
+    const renderText =(text) =>{
+        const a = text.replaceAll( /#\S+/g , `<a href=$& style="color : #5ea9dd">$&</a>`)
+
+        return {__html :a}
+
+
+    }
     return (
         <div className='new-twitte'>
-                <img src={img_addres} />
+                <img src={sender.img_addres} />
                 <div className='name-username-twitte'>
-                    <span className='name'>{name}</span>
-                    <span className='username'>{username}</span>
-                    <span className='twitte'>
-                        بهترین وعده غذایی با اختلاف زیادی صبحانست چون ممکن نیست برای #صبحانه کس
-                        خورشت #کرفس درست 
-                        بهترین وعده غذایی با اختلاف زیادی صبحانست چون ممکن نیست برای #صبحانه کس
-                        خورشت #کرفس درست                        بهترین وعده غذایی با اختلاف زیادی صبحانست چون ممکن نیست برای #صبحانه کس
-                        خورشت #کرفس درست 
-                        بهترین وعده غذایی با اختلاف زیادی صبحانست چون ممکن نیست برای #صبحانه کس
-                        خورشت #کرفس درست
+                    <span className='name'>{sender.name}</span>
+                    <span className='username'>{sender.username}</span>
+                    <span className='twitte' dangerouslySetInnerHTML={renderText(text)}>
+            
                     </span>
                     <div className='reTwitte-likes'>
-                        <span className='like-number'>324</span>
+                        <span className='like-number'>{likes}</span>
                         <span className='like-icon'>
                             <FaHeart />
                         </span>
@@ -34,5 +36,4 @@ const TwittesList = ({name , username , img_addres}) => {
         </div>
     );
 };
-
 export default TwittesList;

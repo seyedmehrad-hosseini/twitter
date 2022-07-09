@@ -1,23 +1,37 @@
-import React from 'react';
+import React  from 'react';
+import { BrowserRouter, Link,Navbar, NavLink } from 'react-router-dom';
 import HotHashtags from './HotHashtags/HotHashtags';
 
 const hashtags =[
         "پرچم_دار_جدید",
         'کرونا_ویروس',
         'ویروس_لامصب',
-        'پرچم_دار_جدید',
-        'کرونا_ویروس',
+        'کرفس',
+        'دوچرخه',
         'ویروس_لامصب'
 ]
 
 const RightSidebar = () => {
+    
+
+
     return (
         <div className='right-sidbar'>
             <div className='title'>
                 <img src='img/twitterLogo.png' />
-                <span>توییتر فارسی</span>
+                <Link to="home" className='logo-name'>توییتر فارسی</Link>
+
             </div>
-            <span className='hot-hashtags-title'>داغ ترین هشتگ ها</span>
+            
+ 
+              
+                    <Link to="most-hashtags" className='hot-hashtags-title'>داغ ترین هشتگ ها</Link>
+
+                
+                    
+
+                    
+           
             <div>
                 {
                     hashtags.map((item) => <HotHashtags title = {item} />)

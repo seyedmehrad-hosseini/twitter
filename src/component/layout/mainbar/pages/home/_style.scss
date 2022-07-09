@@ -30,6 +30,8 @@
             // margin-right: 5%;
             outline: none;
             border :none;
+            font-family: Shabnam;
+
             &::placeholder{
                 font-family: Shabnam;
                 font-size: 1.2em;
@@ -79,4 +81,8 @@
         -o-border-radius:20px;
         -webkit-border-radius:20px;
 }
+}
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-placeholder);
+    color : $gray
 }

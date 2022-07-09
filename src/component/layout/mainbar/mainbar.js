@@ -1,16 +1,16 @@
 
 import React from 'react';
-import HomePage from './pages/home/homepage';
-import MostHashtags from './pages/mostHashtag/MostHashtags';
-import TwittesByUsers from './pages/twittesByUsers/TwittesByUsers';
 
+import MyRouts from '../../routes/routs';
 const MainBar = () => {
+    
     return (
         <div className='mainbar'>
+            {/* <BrowserRouter> */}
+            
+            <MyRouts />
+                
 
-            {/* <HomePage  /> */}
-            {/* <MostHashtags /> */}
-            <TwittesByUsers />
 
         </div>
     );
