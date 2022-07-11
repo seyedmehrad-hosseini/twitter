@@ -1,24 +1,19 @@
 import React,{useEffect, useRef, useState} from 'react';
-import { FaFileImage } from "react-icons/fa";
 import Header from '../../../../header/Header';
 import TwittesList from '../twitteslist/TwittesList';
 import { FaHome } from "react-icons/fa";
-import axios from 'axios';
+import NewTweete from './component/NewTweete';
+import { getAllTweets } from '../../../../../api/api_tweet';
 const HomePage = () => {
-    const [inputTwitte, setInputTwitte] = useState('');
-    const [bestUsersData ,setBestUsersData] = useState([])
+    const [tweets ,settweets] = useState([])
         useEffect(()=>{
-               axios.get(" http://localhost:3000/bestUsersData")
-               .then(response=>{
-                    const data = response.data
-                    setBestUsersData(data)
-                    
-
-
-               }).catch(error=>{
-                console.log(error)
-
-               })
+            getAllTweets( (isOk , dataOrError) =>{
+                if(isOk){
+                    settweets(dataOrError)
+                }else{
+                    alert('data not found error')
+                }
+            })
 
                }
      , [])
@@ -27,30 +22,12 @@ const HomePage = () => {
     return (
         <div className='homePage'>
             <Header name={"خانه"} icon={<FaHome/>} />
-            <div className="do-tweet">
-                <img src='img/userMehrad.jpg'/>
-                <textarea contentEditable 
-                    onChange={(e)=> setInputTwitte(e.target.value)}
-                    value={inputTwitte}
-                    placeholder="توییت کن..."  
-                    className='twitte-input' placeholder='توییت کن ...'>
-                   
-
-                </textarea>
-                <div className='twitte-improtImg'>
-                    <div className='importImg'>
-                        <FaFileImage />
-                    </div>
-                    <button>
-                            توییت
-                    </button>
-                </div>
-            </div>
+            <NewTweete />
             <div className='twittes'>
                 {
-                    bestUsersData.map(item => {
+                    tweets.map(item => {
 
-                        if(item.twittes !=''){
+                        if(item.text !=''){
                             return<TwittesList {...item}/>
                         }
                     

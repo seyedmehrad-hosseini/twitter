@@ -1,19 +1,25 @@
-import React  from 'react';
+import axios from 'axios';
+import React, { useEffect, useState }  from 'react';
 import { BrowserRouter, Link,Navbar, NavLink } from 'react-router-dom';
+import { getMostHashtags } from '../../../api/api_hashtags';
 import HotHashtags from './HotHashtags/HotHashtags';
 
-const hashtags =[
-        "پرچم_دار_جدید",
-        'کرونا_ویروس',
-        'ویروس_لامصب',
-        'کرفس',
-        'دوچرخه',
-        'ویروس_لامصب'
-]
+
 
 const RightSidebar = () => {
     
+    const [hashtags ,setHashtags] = useState([])
+    useEffect(()=>{
+            getMostHashtags((isOk, dataOrError)=>{
+                if(isOk){
+                    setHashtags(dataOrError)
+                }else{
+                    console.log('data of mostHashtags notFound')
+                }
+            })
 
+           }
+ , [])
 
     return (
         <div className='right-sidbar'>

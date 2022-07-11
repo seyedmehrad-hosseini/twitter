@@ -1,85 +1,139 @@
-{  "bestUsersData" : [
-  {
- "sender": {
-      "name" : "xiaomi",
-      "username" :"@Xiaomi" ,
-      "img_addres" : "/img/userXiaomi.png"
-    },
-      "text" :  "دوچرخه هایی که در تصویر دیده م￾ شوند، همان #دوچرخه های نارنج￾ معروف￾ است که در طرح",
-      "likes" : "9"
-
-
-}
-,
 {
-  "sender": {
-       "name" : "samsung",
-       "username" :"@Samsung" ,
-       "img_addres" : "/img/userSamsung.png"
-     },
-       "text" :  "دوچرخه هایی که در تصویر دیده م￾ شوند، همان #دوچرخه های نارنج￾ معروف￾ است که در طرح",
-       "likes" : "14"
- 
- 
- },
- {
-  "sender": {
-       "name" : "بیل گیتس",
-       "username" :"@BillGates" ,
-       "img_addres" : "/img/userBillGates.jpg"
-     },
-       "text" :  "دوچرخه هایی که در تصویر دیده م￾ شوند، همان #دوچرخه های نارنج￾ معروف￾ است که در طرح",
-       "likes" : "176"
- 
- 
- },
- {
-  "sender": {
-       "name" : "مایک تایسون",
-       "username" :"@Mike" ,
-       "img_addres" : "/img/userMikeTyson.jpg"
-     },
-       "text" :  "دوچرخه هایی که در تصویر دیده م￾ شوند، همان #دوچرخه های نارنج￾ معروف￾ است که در طرح",
-       "likes" : "187"
- 
- 
- },
- {
-  "sender": {
-       "name" : "بیلی آیلیش",
-       "username" :"@Bili" ,
-       "img_addres" : "/img/usrBiliAylish.jpg"
-     },
-       "text" :  "دوچرخه هایی که در تصویر دیده م￾ شوند، همان #دوچرخه های نارنج￾ معروف￾ است که در طرح",
-       "likes" : "324"
- 
- 
- }
- 
-],
-"hashtags" :[
-  "پرچم_دار_جدید",
-  "کرونا_ویروس",
-  "ویروس_لامصب",
-  "کرفس",
-  "دوچرخه",
-  "ویروس_لامصب"
-],
-  "posts": [
+  "tweets": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "sender": {
+        "name": "xiaomi",
+        "username": "@Xiaomi",
+        "img_addres": "/img/userXiaomi.png"
+      },
+      "text": "دوچرخه هایی که در تصویر دیده م￾ شوند، همان #دوچرخه های نارنج￾ معروف￾ است که در طرح",
+      "likes": "9"
+    },
+    {
+      "sender": {
+        "name": "samsung",
+        "username": "@Samsung",
+        "img_addres": "/img/userSamsung.png"
+      },
+      "text": "دوچرخه هایی که در تصویر دیده م￾ شوند، همان #دوچرخه های نارنج￾ معروف￾ است که در طرح",
+      "likes": "14"
+    },
+    {
+      "sender": {
+        "name": "بیل گیتس",
+        "username": "@BillGates",
+        "img_addres": "/img/userBillGates.jpg"
+      },
+      "text": "دوچرخه هایی که در تصویر دیده م￾ شوند، همان #دوچرخه های نارنج￾ معروف￾ است که در طرح",
+      "likes": "176"
+    },
+    {
+      "sender": {
+        "name": "مایک تایسون",
+        "username": "@Mike",
+        "img_addres": "/img/userMikeTyson.jpg"
+      },
+      "text": "دوچرخه هایی که در تصویر دیده م￾ شوند، همان #دوچرخه های نارنج￾ معروف￾ است که در طرح",
+      "likes": "187"
+    },
+    {
+      "sender": {
+        "name": "بیلی آیلیش",
+        "username": "@Bili",
+        "img_addres": "/img/usrBiliAylish.jpg"
+      },
+      "text": "",
+      "likes": "324"
+    },
+    {
+      "id": 11,
+      "sender": {
+        "name": "mehrad",
+        "username": "@mehi",
+        "img_addres": "/img/userMehrad.jpg"
+      },
+      "text": "#کرفس",
+      "likes": "35"
+    },
+    {
+      "id": 308,
+      "sender": {
+        "name": "mehrad",
+        "username": "@mehi",
+        "img_addres": "/img/userMehrad.jpg"
+      },
+      "text": "این #ویروس_لامصب چی بود دیگه",
+      "likes": "35"
+    },
+    {
+      "id": 977,
+      "sender": {
+        "name": "mehrad",
+        "username": "@mehi",
+        "img_addres": "/img/userMehrad.jpg"
+      },
+      "text": "",
+      "likes": "35"
+    },
+    {
+      "id": 795,
+      "sender": {
+        "name": "mehrad",
+        "username": "@mehi",
+        "img_addres": "/img/userMehrad.jpg"
+      },
+      "text": "",
+      "likes": "35"
+    },
+    {
+      "id": 494,
+      "sender": {
+        "name": "mehrad",
+        "username": "@mehi",
+        "img_addres": "/img/userMehrad.jpg"
+      },
+      "text": "سلام بر #پرچم_دار_جدید",
+      "likes": "35"
     }
   ],
-  "comments": [
+  "hashtags": [
+    "پرچم_دار_جدید",
+    "کرونا_ویروس",
+    "ویروس_لامصب",
+    "کرفس",
+    "دوچرخه",
+    "ویروس_لامصب"
+  ],
+  "users": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "xiaomi",
+      "username": "@xiaomi",
+      "img_addres": "/img/userXiaomi.png"
+    },
+    {
+      "id": 2,
+      "name": "samsung",
+      "username": "@samsung",
+      "img_addres": "/img/userSamsung.png"
+    },
+    {
+      "id": 3,
+      "name": "بیل گیتس",
+      "username": "@BillGates",
+      "img_addres": "/img/userBillGates.jpg"
+    },
+    {
+      "id": 4,
+      "name": "مایک تایسون",
+      "username": "@Mike",
+      "img_addres": "/img/userMikeTyson.jpg"
+    },
+    {
+      "id": 5,
+      "name": "بیلی آیلیش",
+      "username": "@Bili",
+      "img_addres": "/img/usrBiliAylish.jpg"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
