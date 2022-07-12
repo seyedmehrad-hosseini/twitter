@@ -1,19 +1,24 @@
 
 import React from 'react';
+import { Outlet, Route, Routes } from 'react-router-dom';
+import { MyRouts } from '../../routes/routs';
+import HomePage from './pages/home/homepage';
+import MostHashtags from './pages/mostHashtag/MostHashtags';
+import TwittesByUsers from './pages/twittesByUsers/TwittesByUsers';
 
-import MyRouts from '../../routes/routs';
 const MainBar = () => {
     
     return (
+
         <div className='mainbar'>
-            {/* <BrowserRouter> */}
             
-            <MyRouts />
-                
+            
 
 
+            <Outlet />
         </div>
-    );
+    )
+    ;
 };
 
 export default MainBar;
