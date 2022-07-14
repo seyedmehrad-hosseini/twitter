@@ -10,6 +10,15 @@ export const getUrlInstanse = () =>{
 
 
 }
-// module.exports  = getUrlInstanse
+// export const getUrlInstanse = () =>{
+//     return axios.create({
+//          baseURL: 'https://twitterapi.liara.run/api',
+//          headers :{
+//              API_KEY : 'skdchiyefnlvc'
+//          }
+//      })
+ 
+ 
+//  }
 
 

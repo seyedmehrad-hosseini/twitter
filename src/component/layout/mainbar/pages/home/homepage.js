@@ -7,14 +7,17 @@ import { getAllTweets } from '../../../../../api/api_tweet';
 import { Outlet } from 'react-router-dom';
 const HomePage = () => {
     const [tweets ,settweets] = useState([])
+    const getAllTweets_example =()=>{
+        getAllTweets( (isOk , dataOrError ) =>{
+            if(isOk){
+                settweets(dataOrError)
+            }else{
+                // alert('data not found error')
+            }
+        })
+    }
         useEffect(()=>{
-            getAllTweets( (isOk , dataOrError) =>{
-                if(isOk){
-                    settweets(dataOrError)
-                }else{
-                    alert('data not found error')
-                }
-            })
+            getAllTweets_example()
 
                }
      , [])
@@ -23,7 +26,7 @@ const HomePage = () => {
     return (<>
         <div className='homePage'>
             <Header name={"خانه"} icon={<FaHome/>} />
-            <NewTweete />
+            <NewTweete getAllTweets={getAllTweets_example} />
             <div className='twittes'>
                 {
                     tweets.map(item => {

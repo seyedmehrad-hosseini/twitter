@@ -5,7 +5,7 @@ export const getAllTweets = (callback) =>{
         getUrlInstanse().get("/tweets")
         .then(response=>{
                 const data = response.data
-                callback(true , data)
+                callback(true , data, callback())
         
            }).catch(error=>{
                 callback(false , error)
@@ -15,7 +15,7 @@ export const getAllTweets = (callback) =>{
         
 }
 
-export const addNewTweet = (inputTwitte) =>{
+export const addNewTweet = (inputTwitte , callback) =>{
         const newTweete = {
                 id : Math.floor(Math.random()*1000),
                 "sender": {
@@ -31,9 +31,12 @@ export const addNewTweet = (inputTwitte) =>{
         }
         getUrlInstanse().post('/tweets', newTweete)
         .then(res=>{
-            alert('new tweet')
+        //     alert('new tweet')
+            callback(true,res.message)
         }).catch(err=>{
-            alert('tweet dont send')
+        //     alert('tweet dont send')
+        callback(false,err.message)
+
         })
 
 }

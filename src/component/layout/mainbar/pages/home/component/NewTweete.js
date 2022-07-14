@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { FaFileImage } from "react-icons/fa";
 import { addNewTweet } from '../../../../../../api/api_tweet';
-const NewTweete = () => {
+const NewTweete = ({getAllTweets}) => {
     const [inputTwitte, setInputTwitte] = useState('');
     
     
@@ -21,7 +21,18 @@ const NewTweete = () => {
             <div className='importImg'>
                 <FaFileImage />
             </div>
-            <button onClick={() =>addNewTweet(inputTwitte)}>
+            <button onClick={() =>{
+                addNewTweet(inputTwitte , (isOk, message)=>{
+                    if(isOk){
+                        getAllTweets()
+                        alert(message)
+                    }else{
+                        alert(message)
+                    }
+
+                })
+                setInputTwitte('')
+            }}>
                     توییت
             </button>
         </div>
