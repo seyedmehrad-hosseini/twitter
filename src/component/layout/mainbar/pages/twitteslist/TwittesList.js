@@ -4,7 +4,7 @@ import { FaHeart,FaRetweet} from "react-icons/fa";
 
 
 
-const TwittesList = ({sender , text , likes}) => {
+const TwittesList = ({user , text , likes}) => {
     const renderText =(text) =>{
         const a = text.replaceAll( /#\S+/g , `<a href=$& style="color : #5ea9dd">$&</a>`)
 
@@ -12,12 +12,20 @@ const TwittesList = ({sender , text , likes}) => {
 
 
     }
+    const getImage =()=>{
+        if(user.image) {
+           return user.image
+        }
+        else {
+            return'/img/publicProfile.png'
+        }
+    }
     return (
         <div className='new-twitte'>
-                <img src={sender.img_addres} />
+                <img src={getImage()} />
                 <div className='name-username-twitte'>
-                    <span className='name'>{sender.name}</span>
-                    <span className='username'>{sender.username}</span>
+                    <span className='name'>{user.name}</span>
+                    <span className='username'>{user.username}</span>
                     <span className='twitte' dangerouslySetInnerHTML={renderText(text)}>
             
                     </span>

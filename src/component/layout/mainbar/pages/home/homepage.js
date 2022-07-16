@@ -11,8 +11,10 @@ const HomePage = () => {
         getAllTweets( (isOk , dataOrError ) =>{
             if(isOk){
                 settweets(dataOrError)
+                
+
             }else{
-                // alert('data not found error')
+                
             }
         })
     }
@@ -31,9 +33,9 @@ const HomePage = () => {
                 {
                     tweets.map(item => {
                         
-                        if(item.text !=''){
+                        // if(item.text !=''){
                             return<TwittesList {...item}/>
-                        }
+                        // }
                         
                     })
                 }

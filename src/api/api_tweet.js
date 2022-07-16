@@ -1,8 +1,8 @@
-import { getUrlInstanse } from './api'
+import { getUrlInstanse, getUrlInstansePrivate } from './api'
 
 
 export const getAllTweets = (callback) =>{
-        getUrlInstanse().get("getAllTweet")
+        getUrlInstansePrivate().post("getAllTweet")
         .then(response=>{
                 const data = response.data
                 callback(true , data, callback())
