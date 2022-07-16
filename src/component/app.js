@@ -8,6 +8,7 @@ const App = () => {
     return (
 
         <div className='container'>
+            
             <RightSidebar />
             <Outlet/>
             <LeftSidebar />

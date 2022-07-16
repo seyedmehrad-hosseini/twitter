@@ -19,6 +19,9 @@ const Register = () => {
                                         localStorage.setItem("username" , dataORerror.username)
                                         localStorage.setItem("password" , dataORerror.password)
                                         localStorage.setItem("x-auth-toke" , dataORerror["x-auth-toke"])
+
+                                        window.location.reload()//for navigate to homepage
+
                                     }else{
                                         alert(dataORerror)
 

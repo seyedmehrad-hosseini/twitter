@@ -35,3 +35,4 @@ export const RejisterUserAPI=( image,name, username , password,repeatpassword,ca
        
     })
 }
+

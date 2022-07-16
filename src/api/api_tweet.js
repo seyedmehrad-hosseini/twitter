@@ -2,7 +2,7 @@ import { getUrlInstanse } from './api'
 
 
 export const getAllTweets = (callback) =>{
-        getUrlInstanse().get("/tweets")
+        getUrlInstanse().get("getAllTweet")
         .then(response=>{
                 const data = response.data
                 callback(true , data, callback())
