@@ -1,8 +1,8 @@
-import { getUrlInstanse } from './api'
+import { getUrlInstanse, getUrlInstansePrivate } from './api'
 
 
 export const getMostHashtags = (callback) =>{
-        getUrlInstanse().get("/hashtags")
+        getUrlInstansePrivate().get("/getAllHashTags")
         .then(response=>{
                 callback(true , response.data)
         

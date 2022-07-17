@@ -1,8 +1,8 @@
-import { getUrlInstanse } from './api'
+import {  getUrlInstansePrivate } from './api'
 
 
 export const getBestUsers = (callback) =>{
-        getUrlInstanse().get("/users")
+        getUrlInstansePrivate().get("getAllUser")
         .then(response=>{
                 callback(true , response.data)
         

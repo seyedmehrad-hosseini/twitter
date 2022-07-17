@@ -11,21 +11,19 @@ const LeftSidebar = () => {
             if(isOk){
                 setBestUsers(dataOrError)
             }else{
-                console.log('data of bestUsers notFound')
             }
         })
     },[])
+    console.log(bestUsers)
     return (
         <div className='left-sidebar'>
             <UserAccount />
             <div className='bestUsers'>
             <Link to="twittes-by-users" className='title'> بهرترین خبرنگارها</Link>
-
-            {/* <span className='title'>
-                بهرترین خبرنگارها
-            </span> */}
                 {
-                    bestUsers.map((item)=> <BestUsers {...item} />)
+                    bestUsers.map((item , index)=> 
+                    index < 5 && <BestUsers {...item} /> )
+                    
                 }
             </div>
             

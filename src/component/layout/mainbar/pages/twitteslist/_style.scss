@@ -9,7 +9,7 @@
     box-sizing: border-box;
     background-color: white;
     margin-top: 7px;
-    img{
+    .newTwittesProfile{
         width: 45px;
         height: 45px;
         object-fit: cover;
@@ -44,6 +44,13 @@
         }
         .twitte{
             width: 85%;
+        }
+        .twitteImg{
+            width: 100%;
+            img{
+                width: 35%;
+                height: max-content;
+            }
         }
 
     }

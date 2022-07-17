@@ -9,7 +9,6 @@ const UserAccount = () => {
         localStorage.clear()
         window.location.reload()
     }
-    console.log(localStorage.getItem("image"))
 
     const getImage =()=>{
         if(ImagePath){
@@ -41,11 +40,12 @@ const UserAccount = () => {
 
         const formData = new FormData ; 
         formData.append( "image",e.target.files[0])
+        console.log(formData)
         uploadUserPhoto(formData,(isOk,dataORerror)=>{
             if(isOk){
                 alert('profile changed')
                 localStorage.setItem("image" , dataORerror.imagePath)
-                console.log(dataORerror)
+                
             }else{
                 alert(dataORerror)
             }

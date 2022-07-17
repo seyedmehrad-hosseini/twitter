@@ -14,7 +14,7 @@
         border-bottom: .01rem solid $light-blue;
         border-top: .01rem solid $light-blue;
 
-        img{
+        .profileUserNewTwitte{
             width: 45px;
             height: 45px;
             
@@ -55,6 +55,7 @@
         width: 30px;
         height: 30px;
         border:1px solid $gray;
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -85,4 +86,20 @@
 [contentEditable=true]:empty:not(:focus):before{
     content:attr(data-placeholder);
     color : $gray
+}
+
+.homePage .do-tweet .twitteImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+    padding: 30px;
+    box-sizing: border-box;
+    img{
+        width: 300px;
+        height: 250px;
+        object-fit: cover;
+    }
+
 }

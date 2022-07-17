@@ -11,7 +11,6 @@ const HomePage = () => {
         getAllTweets( (isOk , dataOrError ) =>{
             if(isOk){
                 settweets(dataOrError)
-                
 
             }else{
                 

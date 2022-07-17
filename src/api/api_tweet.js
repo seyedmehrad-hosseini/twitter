@@ -15,21 +15,9 @@ export const getAllTweets = (callback) =>{
         
 }
 
-export const addNewTweet = (inputTwitte , callback) =>{
-        const newTweete = {
-                id : Math.floor(Math.random()*1000),
-                "sender": {
-                     "name" : "mehrad",
-                     "username" :"@mehi" ,
-                     "img_addres" : "/img/userMehrad.jpg"
-                   },
-                     "text" :  inputTwitte,
-                     "likes" : "35"
-               
-               
-               
-        }
-        getUrlInstanse().post('/tweets', newTweete)
+export const addNewTweet = (newTwitteFormData , callback) =>{
+
+        getUrlInstansePrivate().post('newTweet', newTwitteFormData)
         .then(res=>{
         //     alert('new tweet')
             callback(true,res.message)

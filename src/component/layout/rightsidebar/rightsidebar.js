@@ -14,7 +14,6 @@ const RightSidebar = () => {
                 if(isOk){
                     setHashtags(dataOrError)
                 }else{
-                    console.log('data of mostHashtags notFound')
                 }
             })
 
@@ -40,7 +39,8 @@ const RightSidebar = () => {
            
             <div>
                 {
-                    hashtags.map((item) => <HotHashtags title = {item} />)
+                    hashtags.map((item , index) => 
+                    index < 5 && <HotHashtags title = {item.text} /> )
                 }
             </div>
             
