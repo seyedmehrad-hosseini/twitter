@@ -1,10 +1,13 @@
 import React from 'react';
 import { FaHeart,FaRetweet} from "react-icons/fa";
+import { useReTwitte } from '../../../../../context/context';
 
 
 
 
 const TwittesList = ({user , text , likes , image}) => {
+
+    const {sendTextToTwitte} = useReTwitte()
     const renderText =(text) =>{
         const a = text.replaceAll( /#\S+/g , `<a href=$& style="color : #5ea9dd">$&</a>`)
 
@@ -38,7 +41,7 @@ const TwittesList = ({user , text , likes , image}) => {
                         <span className='like-icon'>
                             <FaHeart />
                         </span>
-                        <span className='reTwitte'>
+                        <span className='reTwitte' onClick={()=>sendTextToTwitte(text)}>
                             <FaRetweet />
                         </span>
 

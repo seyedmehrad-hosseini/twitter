@@ -16,7 +16,7 @@ export const getAllTweets = (callback) =>{
 }
 
 export const addNewTweet = (newTwitteFormData , callback) =>{
-
+        console.log(newTwitteFormData)
         getUrlInstansePrivate().post('newTweet', newTwitteFormData)
         .then(res=>{
         //     alert('new tweet')

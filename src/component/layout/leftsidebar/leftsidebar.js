@@ -14,7 +14,6 @@ const LeftSidebar = () => {
             }
         })
     },[])
-    console.log(bestUsers)
     return (
         <div className='left-sidebar'>
             <UserAccount />

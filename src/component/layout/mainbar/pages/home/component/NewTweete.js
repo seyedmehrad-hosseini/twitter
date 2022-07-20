@@ -1,16 +1,17 @@
 import axios from 'axios';
-import React, { useState , useRef } from 'react';
+import React, { useState , useRef, useContext } from 'react';
 import { FaFileImage } from "react-icons/fa";
 import { addNewTweet } from '../../../../../../api/api_tweet';
+import { ReTwitte, useReTwitte } from '../../../../../../context/context';
 const NewTweete = ({getAllTweets}) => {
-    const [inputTwitte, setInputTwitte] = useState('');
-    const [twitteImgPath, settwitteImgPath] = useState();
-    const [FormDataTwitte, setFormDataTwitte] = useState('');
+    const {TextIsReceived,setTextIsReceived} = useReTwitte()
+
+    const [twitteImgPath, settwitteImgPath] = useState('');
+    const [ImageFile, setImageFile] = useState();
+
     const inputRef = useRef()
     const getImage =()=>{
-        // if(ImagePath){
-        //     return ImagePath
-        // }
+
 
          if (localStorage.getItem("image")){
             
@@ -20,19 +21,21 @@ const NewTweete = ({getAllTweets}) => {
         }
     }
     const handleFileSelected=(e)=>{
+        
+        console.log('holo1')
+        {
+            console.log('holo2')
+            const reader = new FileReader()
+            reader.onload=(e)=>{
+                settwitteImgPath(e.target.result)
+                
+            }
+            reader.readAsDataURL(e.target.files[0])
+            setImageFile(e.target.files[0])
 
-         const reader = new FileReader()
-         reader.onload=(e)=>{
-             settwitteImgPath(e.target.result)
- 
-         }
-         reader.readAsDataURL(e.target.files[0])
- 
-         const formData = new FormData ; 
-         formData.append( "image",e.target.files[0])
-         formData.append("text",inputTwitte)
-        console.log(formData);
-        setFormDataTwitte(formData)
+            
+
+        }
 
        
     }
@@ -40,9 +43,9 @@ const NewTweete = ({getAllTweets}) => {
     return (
         <div className="do-tweet">
         <img className="profileUserNewTwitte" src={getImage()}/>
-        <textarea contentEditable 
-            onChange={(e)=> setInputTwitte(e.target.value)}
-            value={inputTwitte}
+        <textarea 
+            onChange={(e)=> setTextIsReceived(e.target.value)}
+            value={TextIsReceived}
             placeholder="توییت کن..."  
             className='twitte-input' placeholder='توییت کن ...'>
            
@@ -61,7 +64,14 @@ const NewTweete = ({getAllTweets}) => {
                 <input ref={inputRef} type = "file" style={{display : "none"}} onChange={handleFileSelected}/>
             </div>
             <button onClick={() =>{
-                addNewTweet(FormDataTwitte , (isOk, message)=>{
+                        const formData = new FormData ; 
+                        formData.append("text",TextIsReceived)
+
+                        if(twitteImgPath == ''){
+                        formData.append( "image",ImageFile)
+
+                        }
+                addNewTweet(formData , (isOk, message)=>{
                     if(isOk){
                         getAllTweets()
                         alert(message)
@@ -70,8 +80,8 @@ const NewTweete = ({getAllTweets}) => {
                     }
 
                 })
-                setInputTwitte('')
-                settwitteImgPath()
+                setTextIsReceived('')
+                settwitteImgPath('')
 
             }}>
                     توییت
