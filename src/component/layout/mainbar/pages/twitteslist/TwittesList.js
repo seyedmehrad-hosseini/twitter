@@ -1,15 +1,16 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { FaHeart,FaRetweet} from "react-icons/fa";
+import { likeTwittes } from '../../../../../api/api_likeTwitte';
 import { useReTwitte } from '../../../../../context/retwitteContext';
 import { useSetProfile } from '../../../../../context/setProfileContext';
 
 
 
 
-const TwittesList = ({user , text , likes , image}) => {
-
+const TwittesList = ({user , text , likes , image , _id}) => {
     const localUsername =  localStorage.getItem("username")
-    
+
+    const [postLikes, setPostLikes] = useState(false);
     const {setnewTwitteInput} = useReTwitte()
     const {ImagePath} = useSetProfile()
 
@@ -46,11 +47,24 @@ const TwittesList = ({user , text , likes , image}) => {
                                 <img src={image} />
                             </div>}
                     <div className='reTwitte-likes'>
-                        <span className='like-number'>{likes}</span>
-                        <span className='like-icon'>
-                            <FaHeart onClick={} />
+                        <span className='like-number'>{postLikes ? parseInt(likes)+1  : parseInt(likes) }</span>
+                        <span className='like-icon' style={{color : postLikes ?  "red" :"gray" }}
+                            onClick={()=>
+                                    {
+                                        setPostLikes(!postLikes)
+                                        likeTwittes(_id , (isOk, dataORerror)=>{
+                                            if(isOk){
+                                                alert('post liked')
+            
+                                            }else{
+                                                alert('post dont liked')
+                                            }
+                                        })
+                                    }
+                                }>
+                            <FaHeart  />
                         </span>
-                        <span className='reTwitte' onClick={()=>setnewTwitteInput(text)}>
+                        <span className='reTwitte' onClick={()=> setnewTwitteInput(text)}>
                             <FaRetweet />
                         </span>
 

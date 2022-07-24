@@ -10,6 +10,7 @@ import LoginRegister from './component/layout/mainbar/pages/loginRegister/LoginR
 import Register from './component/layout/mainbar/pages/loginRegister/Register';
 import MostHashtags from './component/layout/mainbar/pages/mostHashtag/MostHashtags';
 import TwittesByUsers from './component/layout/mainbar/pages/twittesByUsers/TwittesByUsers';
+import { GetAllTweetsContextprovider, getAllTweetsContextprovider } from './context/allTwitteContext';
 import { ReTwitteProvider } from './context/retwitteContext';
 import { SetProfileProvider } from './context/setProfileContext';
 
@@ -29,6 +30,8 @@ const isLogin =!!localStorage.getItem('x-auth-token')
 const root = ReactDOM.createRoot(document.getElementById('root'));
 console.log(isLogin)
 root.render(<>
+<GetAllTweetsContextprovider>
+
    <SetProfileProvider>
       <ReTwitteProvider>
          <BrowserRouter>
@@ -59,6 +62,7 @@ root.render(<>
          </BrowserRouter>
       </ReTwitteProvider>
    </SetProfileProvider>
+</GetAllTweetsContextprovider>
  </>
     
   

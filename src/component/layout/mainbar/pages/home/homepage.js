@@ -5,18 +5,12 @@ import { FaHome } from "react-icons/fa";
 import NewTweete from './component/NewTweete';
 import { getAllTweets } from '../../../../../api/api_tweet';
 import { Outlet } from 'react-router-dom';
+import { useGetAlltwitte } from '../../../../../context/allTwitteContext';
 const HomePage = () => {
-    const [tweets ,settweets] = useState([])
-    const getAllTweets_example =()=>{
-        getAllTweets( (isOk , dataOrError ) =>{
-            if(isOk){
-                settweets(dataOrError)
 
-            }else{
-                
-            }
-        })
-    }
+    const {getAllTweets_example,tweets} = useGetAlltwitte()
+    console.log(tweets)
+
         useEffect(()=>{
             getAllTweets_example()
 
@@ -27,7 +21,7 @@ const HomePage = () => {
     return (<>
         <div className='homePage'>
             <Header name={"خانه"} icon={<FaHome/>} />
-            <NewTweete getAllTweets={getAllTweets_example} />
+            <NewTweete  />
             <div className='twittes'>
                 {
                     tweets.map(item => {

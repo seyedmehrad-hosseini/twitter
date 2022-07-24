@@ -9,6 +9,7 @@ import HotHashtags from './HotHashtags/HotHashtags';
 const RightSidebar = () => {
     
     const [hashtags ,setHashtags] = useState([])
+
     useEffect(()=>{
             getMostHashtags((isOk, dataOrError)=>{
                 if(isOk){

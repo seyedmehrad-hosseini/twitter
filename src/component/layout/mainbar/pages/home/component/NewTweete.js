@@ -2,11 +2,14 @@ import axios from 'axios';
 import React, { useState , useRef, useContext } from 'react';
 import { FaFileImage } from "react-icons/fa";
 import { addNewTweet } from '../../../../../../api/api_tweet';
+import { useGetAlltwitte } from '../../../../../../context/allTwitteContext';
 import { useReTwitte } from '../../../../../../context/retwitteContext';
 import { useSetProfile } from '../../../../../../context/setProfileContext';
-const NewTweete = ({getAllTweets}) => {
+const NewTweete = () => {
     const {newTwitteInput,setnewTwitteInput} = useReTwitte()
     const {ImagePath} = useSetProfile()
+    const {getAllTweets_example} = useGetAlltwitte()
+
 
     const [twitteImgPath, settwitteImgPath] = useState('');
     const [ImageFile, setImageFile] = useState();
@@ -77,7 +80,7 @@ const NewTweete = ({getAllTweets}) => {
                         }
                 addNewTweet(formData , (isOk, message)=>{
                     if(isOk){
-                        getAllTweets()
+                        getAllTweets_example()
                         alert(message)
                     }else{
                         alert(message)
