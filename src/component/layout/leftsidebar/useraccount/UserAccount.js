@@ -1,10 +1,12 @@
 import React, {useRef , useState} from 'react';
 import {uploadUserPhoto} from '../../../../api/api_uploadProfile'
+import { useSetProfile } from '../../../../context/setProfileContext';
 const UserAccount = () => {
 
     const inputImageFile = useRef()
-    const [ImageFile, setImageFile] = useState('');
-    const [ImagePath, setImagePath] = useState();
+
+    const {ImageFile,setImageFile,ImagePath,setImagePath} = useSetProfile()
+    
     const logOut = ()=>{
         localStorage.clear()
         window.location.reload()

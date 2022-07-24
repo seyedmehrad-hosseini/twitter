@@ -2,16 +2,20 @@ import axios from 'axios';
 import React, { useState , useRef, useContext } from 'react';
 import { FaFileImage } from "react-icons/fa";
 import { addNewTweet } from '../../../../../../api/api_tweet';
-import { ReTwitte, useReTwitte } from '../../../../../../context/context';
+import { useReTwitte } from '../../../../../../context/retwitteContext';
+import { useSetProfile } from '../../../../../../context/setProfileContext';
 const NewTweete = ({getAllTweets}) => {
-    const {TextIsReceived,setTextIsReceived} = useReTwitte()
+    const {newTwitteInput,setnewTwitteInput} = useReTwitte()
+    const {ImagePath} = useSetProfile()
 
     const [twitteImgPath, settwitteImgPath] = useState('');
     const [ImageFile, setImageFile] = useState();
 
     const inputRef = useRef()
     const getImage =()=>{
-
+        if(ImagePath){
+            return ImagePath
+        }
 
          if (localStorage.getItem("image")){
             
@@ -44,8 +48,8 @@ const NewTweete = ({getAllTweets}) => {
         <div className="do-tweet">
         <img className="profileUserNewTwitte" src={getImage()}/>
         <textarea 
-            onChange={(e)=> setTextIsReceived(e.target.value)}
-            value={TextIsReceived}
+            onChange={(e)=> setnewTwitteInput(e.target.value)}
+            value={newTwitteInput}
             placeholder="توییت کن..."  
             className='twitte-input' placeholder='توییت کن ...'>
            
@@ -65,9 +69,9 @@ const NewTweete = ({getAllTweets}) => {
             </div>
             <button onClick={() =>{
                         const formData = new FormData ; 
-                        formData.append("text",TextIsReceived)
+                        formData.append("text",newTwitteInput)
 
-                        if(twitteImgPath == ''){
+                        if(twitteImgPath != ''){
                         formData.append( "image",ImageFile)
 
                         }
@@ -80,7 +84,7 @@ const NewTweete = ({getAllTweets}) => {
                     }
 
                 })
-                setTextIsReceived('')
+                setnewTwitteInput('')
                 settwitteImgPath('')
 
             }}>

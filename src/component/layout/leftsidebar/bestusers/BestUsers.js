@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSetProfile } from '../../../../context/setProfileContext';
 
 const BestUsers = ({name , username , image}) => {
+    const {ImagePath} = useSetProfile()
+    const localUsername =  localStorage.getItem("username")
+
     const getImage =()=>{
-        if(image) {
+        if(localUsername == username && ImagePath){
+            return ImagePath
+        }
+
+        else if(image) {
            return image
         }
         else {

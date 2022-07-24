@@ -1,13 +1,19 @@
 import React from 'react';
 import { FaHeart,FaRetweet} from "react-icons/fa";
-import { useReTwitte } from '../../../../../context/context';
+import { useReTwitte } from '../../../../../context/retwitteContext';
+import { useSetProfile } from '../../../../../context/setProfileContext';
 
 
 
 
 const TwittesList = ({user , text , likes , image}) => {
 
-    const {sendTextToTwitte} = useReTwitte()
+    const localUsername =  localStorage.getItem("username")
+    
+    const {setnewTwitteInput} = useReTwitte()
+    const {ImagePath} = useSetProfile()
+
+
     const renderText =(text) =>{
         const a = text.replaceAll( /#\S+/g , `<a href=$& style="color : #5ea9dd">$&</a>`)
 
@@ -16,7 +22,10 @@ const TwittesList = ({user , text , likes , image}) => {
 
     }
     const getImage =()=>{
-        if(user.image) {
+        if(localUsername == user.username && ImagePath){
+            return ImagePath
+        }
+        else if(user.image) {
            return user.image
         }
         else {
@@ -39,9 +48,9 @@ const TwittesList = ({user , text , likes , image}) => {
                     <div className='reTwitte-likes'>
                         <span className='like-number'>{likes}</span>
                         <span className='like-icon'>
-                            <FaHeart />
+                            <FaHeart onClick={} />
                         </span>
-                        <span className='reTwitte' onClick={()=>sendTextToTwitte(text)}>
+                        <span className='reTwitte' onClick={()=>setnewTwitteInput(text)}>
                             <FaRetweet />
                         </span>
 

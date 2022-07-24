@@ -4,12 +4,10 @@ const ReTwitte = React.createContext()
 
 const ReTwitteProvider =({children})=>{
 
-    const [TextIsReceived, setTextIsReceived] = useState('');
-    const sendTextToTwitte=(text)=>{
-        setTextIsReceived(text)
-    }
+    const [newTwitteInput, setnewTwitteInput] = useState('');
+
     return (
-        <ReTwitte.Provider value={{TextIsReceived,setTextIsReceived,sendTextToTwitte}}>
+        <ReTwitte.Provider value={{newTwitteInput,setnewTwitteInput}}>
             {children}
         </ReTwitte.Provider>
         )

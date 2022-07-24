@@ -14,6 +14,7 @@ const Login = () => {
                     localStorage.setItem("name" , dataORerror.name)
                     localStorage.setItem("username" , dataORerror.username)
                     localStorage.setItem("password" , dataORerror.password)
+                    localStorage.setItem("image" , dataORerror.image)
                     localStorage.setItem("x-auth-token" , dataORerror["x-auth-token"])
 
                     window.location.reload()//for navigate to homepage

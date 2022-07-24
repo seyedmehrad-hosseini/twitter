@@ -10,7 +10,8 @@ import LoginRegister from './component/layout/mainbar/pages/loginRegister/LoginR
 import Register from './component/layout/mainbar/pages/loginRegister/Register';
 import MostHashtags from './component/layout/mainbar/pages/mostHashtag/MostHashtags';
 import TwittesByUsers from './component/layout/mainbar/pages/twittesByUsers/TwittesByUsers';
-import { ReTwitteProvider } from './context/context';
+import { ReTwitteProvider } from './context/retwitteContext';
+import { SetProfileProvider } from './context/setProfileContext';
 
 import "./css/main.min.css"
 
@@ -28,35 +29,36 @@ const isLogin =!!localStorage.getItem('x-auth-token')
 const root = ReactDOM.createRoot(document.getElementById('root'));
 console.log(isLogin)
 root.render(<>
-   <ReTwitteProvider>
-      <BrowserRouter>
-               <Routes>
+   <SetProfileProvider>
+      <ReTwitteProvider>
+         <BrowserRouter>
+                  <Routes>
 
-                        <Route path='/loginRegister' element={isLogin ?<Navigate to="/"/> :<LoginRegister/>}>
-                           <Route path='/loginRegister' element={isLogin ?<Navigate to="/"/> :<Navigate to="login"/>} />
-                           <Route path='login' element={isLogin ?<Navigate to="/"/> :<Login />} />
-                           <Route path='register' element={isLogin ?<Navigate to="/"/> :<Register />} />
-                        </Route>              
+                           <Route path='/loginRegister' element={isLogin ?<Navigate to="/"/> :<LoginRegister/>}>
+                              <Route path='/loginRegister' element={isLogin ?<Navigate to="/"/> :<Navigate to="login"/>} />
+                              <Route path='login' element={isLogin ?<Navigate to="/"/> :<Login />} />
+                              <Route path='register' element={isLogin ?<Navigate to="/"/> :<Register />} />
+                           </Route>              
 
-                        <Route path='/' element={!isLogin ?<Navigate to="/loginRegister"/>:<App/>}>
-                           <Route path='/' element={!isLogin ?<Navigate to="/loginRegister"/>:<MainBar/>}>
-                              <Route path='/' element={!isLogin ?<Navigate to="/loginRegister"/>:<HomePage />} />
-                              <Route path='/home' element={!isLogin ?<Navigate to="/loginRegister"/>:<HomePage />} />
+                           <Route path='/' element={!isLogin ?<Navigate to="/loginRegister"/>:<App/>}>
+                              <Route path='/' element={!isLogin ?<Navigate to="/loginRegister"/>:<MainBar/>}>
+                                 <Route path='/' element={!isLogin ?<Navigate to="/loginRegister"/>:<HomePage />} />
+                                 <Route path='/home' element={!isLogin ?<Navigate to="/loginRegister"/>:<HomePage />} />
 
-                              <Route path='most-hashtags'>
-                                 <Route path=":hashtagName" element={!isLogin ?<Navigate to="/loginRegister"/>:<MostHashtags />} />    
-                              </Route>
-                              <Route path='twittes-by-users' element={!isLogin ?<Navigate to="/loginRegister"/>:<TwittesByUsers />} />
-                              <Route path='twittes-by-users'>
-                                 <Route path=":username" element={!isLogin ?<Navigate to="/loginRegister"/>:<TwittesByUsers />} />    
+                                 <Route path='most-hashtags'>
+                                    <Route path=":hashtagName" element={!isLogin ?<Navigate to="/loginRegister"/>:<MostHashtags />} />    
+                                 </Route>
+                                 <Route path='twittes-by-users' element={!isLogin ?<Navigate to="/loginRegister"/>:<TwittesByUsers />} />
+                                 <Route path='twittes-by-users'>
+                                    <Route path=":username" element={!isLogin ?<Navigate to="/loginRegister"/>:<TwittesByUsers />} />    
+                                 </Route>
                               </Route>
                            </Route>
-                        </Route>
-                     
-            </Routes>
-      </BrowserRouter>
-   </ReTwitteProvider>
- <ToastContainer/>
+                        
+               </Routes>
+         </BrowserRouter>
+      </ReTwitteProvider>
+   </SetProfileProvider>
  </>
     
   
